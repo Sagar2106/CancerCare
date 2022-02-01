@@ -21,7 +21,7 @@ train_images = []
 train_labels = [] 
 label_name = []
 #for directory_path in glob.glob("cell_images/train/*"):
-for directory_path in glob.glob("C:/Users/Vihaan/Desktop/Project/Train Cases Filtered/"):
+for directory_path in glob.glob("path/Train Cases Filtered/"):
     label = directory_path.split("\\")[-1] 
     #print(label)
     for img_path in glob.glob(os.path.join(directory_path, "*.jpg")):
@@ -54,7 +54,7 @@ train_labels = np.array(train_labels)
 test_images = []
 test_labels = []
 #for directory_path in glob.glob("cell_images/test/*"): 
-for directory_path in glob.glob("C:/Users/Vihaan/Desktop/Project/Test Cases Filtered/"):
+for directory_path in glob.glob("path/Test Cases Filtered/"):
     fruit_label = directory_path.split("\\")[-1]
     for img_path in glob.glob(os.path.join(directory_path, "*.jpg")):
         img = cv2.imread(img_path, 0)
@@ -187,8 +187,8 @@ X_for_ML = image_features
 
 #saving file to csv
 label_dataframe = pd.DataFrame(label_name,columns=['File Name'])
-label_dataframe.to_csv(r'C:/Users/Vihaan/Desktop/Project/Filtered GLCM and kNN/file_name_noseq.csv', index = False, header = True)
-image_features.to_csv(r'C:/Users/Vihaan/Desktop/Project/Filtered GLCM and kNN/test_train.csv', index = False, header = True)
-df = pd.read_csv("C:/Users/Vihaan/Desktop/Project/Filtered GLCM and kNN/test_train.csv")
-df["File Name"] = pd.read_csv('C:/Users/Vihaan/Desktop/Project/Filtered GLCM and kNN/file_name_noseq.csv')
-df.to_csv(r'C:/Users/Vihaan/Desktop/Project/Filtered GLCM and kNN/output_knn_train.csv', index = False)
+label_dataframe.to_csv(r'path/file_name_noseq.csv', index = False, header = True)
+image_features.to_csv(r'path/test_train.csv', index = False, header = True)
+df = pd.read_csv("path/test_train.csv")
+df["File Name"] = pd.read_csv('path/file_name_noseq.csv')
+df.to_csv(r'path/output_knn_train.csv', index = False)
