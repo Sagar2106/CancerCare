@@ -24,7 +24,7 @@ from skimage.measure import shannon_entropy
 from csv import writer
 from csv import reader
 
-print(os.listdir("C:/Users/Vihaan/Desktop/Project"))
+print(os.listdir("path/Project"))
 
 #Resize images to
 SIZE = 128
@@ -35,7 +35,7 @@ train_images = []
 train_labels = [] 
 label_name = []
 #for directory_path in glob.glob("cell_images/train/*"):
-for directory_path in glob.glob("C:/Users/Vihaan/Desktop/Project/Train_Cases/"):
+for directory_path in glob.glob("path/Train_Cases/"):
     label = directory_path.split("\\")[-1] 
     #print(label)
     for img_path in glob.glob(os.path.join(directory_path, "*.jpg")):
@@ -58,7 +58,7 @@ train_labels = np.array(train_labels)
 test_images = []
 test_labels = []
 #for directory_path in glob.glob("cell_images/test/*"): 
-for directory_path in glob.glob("C:/Users/Vihaan/Desktop/Project/Test_Cases/"):
+for directory_path in glob.glob("path/Test_Cases/"):
     fruit_label = directory_path.split("\\")[-1]
     for img_path in glob.glob(os.path.join(directory_path, "*.jpg")):
         img = cv2.imread(img_path, 0)
@@ -183,11 +183,11 @@ X_for_ML = image_features
 
 #saving file to csv
 label_dataframe = pd.DataFrame(label_name,columns=['File Name'])
-label_dataframe.to_csv(r'C:/Users/Vihaan/Desktop/Project/CSV/file_name.csv', index = False, header = True)
-image_features.to_csv(r'C:/Users/Vihaan/Desktop/Project/CSV/test_train.csv', index = False, header = True)
-df = pd.read_csv("C:/Users/Vihaan/Desktop/Project/CSV/test_train.csv")
-df["File Name"] = pd.read_csv('C:/Users/Vihaan/Desktop/Project/CSV/file_name.csv')
-df.to_csv(r'C:/Users/Vihaan/Desktop/Project/CSV/output_optimal.csv', index = True)
+label_dataframe.to_csv(r'path/file_name.csv', index = False, header = True)
+image_features.to_csv(r'path/test_train.csv', index = False, header = True)
+df = pd.read_csv("path/test_train.csv")
+df["File Name"] = pd.read_csv('path/file_name.csv')
+df.to_csv(r'path/output_optimal.csv', index = True)
 
 #Reshape to a vector for Random Forest / SVM training
 #n_features = image_features.shape[1]
