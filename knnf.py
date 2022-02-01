@@ -6,19 +6,19 @@ from matplotlib.colors import ListedColormap
 from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
 
-data=pd.read_csv("C:/Users/Vihaan/Desktop/Project/Filtered GLCM and kNN/output_knn_train.csv")
+data=pd.read_csv("path/output_knn_train.csv")
 data["Diagnosis"]=data["File Name"].map({'Bengincase':0,'Malignantcase':1,'Normalcase':2}).astype(int)
 data=data.drop(["File Name"],axis=1)
-data.to_csv(r'C:/Users/Vihaan/Desktop/Project/Filtered GLCM and kNN/output_knn_working_train.csv', index = False)
+data.to_csv(r'path/output_knn_working_train.csv', index = False)
 
-data=pd.read_csv("C:/Users/Vihaan/Desktop/Project/Filtered GLCM and kNN/output_knn_test.csv")
+data=pd.read_csv("path/output_knn_test.csv")
 data["Diagnosis"]=data["File Name"].map({'Bengincase':0,'Malignantcase':1,'Normalcase':2}).astype(int)
 data=data.drop(["File Name"],axis=1)
-data.to_csv(r'C:/Users/Vihaan/Desktop/Project/Filtered GLCM and kNN/output_knn_working_test.csv', index = False)
+data.to_csv(r'path/output_knn_working_test.csv', index = False)
 
 
-data1=pd.read_csv("C:/Users/Vihaan/Desktop/Project/Filtered GLCM and kNN/output_knn_working_train.csv")
-data2=pd.read_csv("C:/Users/Vihaan/Desktop/Project/Filtered GLCM and kNN/output_knn_working_test.csv")
+data1=pd.read_csv("path/output_knn_working_train.csv")
+data2=pd.read_csv("path/output_knn_working_test.csv")
 
 print(data1.shape)
 print(data2.shape)
