@@ -1,6 +1,6 @@
 # CancerCare
 ----------------------------------------------------------------------------------
-Bachelors Final Year Project - Lung Cancer Detection System by classifying CT Scan Images using kNN and GLCM
+Bachelors Final Year Project - Lung Cancer Detection System by classifying CT Scan Images using kNN and GLCM.
 Conducted by Sagar Sonawane, Aayush Kamdar, and Vihaan Sharma. 
 ----------------------------------------------------------------------------------
 A lung cancer detection system made by using various Image Processing (Gabor Filter, Otsu's Thresholding) and Machine Learning(GLCM, kNN Classification) methods by using the CT scan images in the IQ-OTHNCCD lung cancer dataset.
